@@ -1,9 +1,9 @@
 fn main() {
-    fizzbuzz();
+    fizzbuzz(5, 10);
 }
 
-fn fizzbuzz() {
-    for i in 1..=25 {
+fn fizzbuzz(start: i32, end: i32) {
+    for i in start..=end {
         if i % 3 == 0 && i % 5 == 0 {
             println!("FizzBuzz");
         } else if i % 3 == 0 {
