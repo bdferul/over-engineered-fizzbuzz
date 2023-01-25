@@ -1,4 +1,8 @@
 fn main() {
+    fizzbuzz();
+}
+
+fn fizzbuzz() {
     for i in 1..=25 {
         if i % 3 == 0 && i % 5 == 0 {
             println!("FizzBuzz");
