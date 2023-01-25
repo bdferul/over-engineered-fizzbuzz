@@ -3,15 +3,21 @@ fn main() {
 }
 
 fn fizzbuzz(start: i32, end: i32) {
+    let cnd_map = [("Fizz", 3), ("Buzz", 5)];
+
     for i in start..=end {
-        if i % 3 == 0 && i % 5 == 0 {
-            println!("FizzBuzz");
-        } else if i % 3 == 0 {
-            println!("Fizz");
-        } else if i % 5 == 0 {
-            println!("Buzz");
-        } else {
-            println!("{i}");
+        let mut canvas = String::new();
+
+        for (string, value) in cnd_map {
+            if i % value == 0 {
+                canvas += string;
+            }
         }
+
+        if canvas.is_empty() {
+            canvas = i.to_string();
+        }
+
+        println!("{canvas}");
     }
 }
