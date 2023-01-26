@@ -50,6 +50,7 @@ impl Debug for Param {
 /// ```
 /// # use over_engineered_fizzbuzz::*;
 /// let mut fb = FizzBuzz::default();
+///
 /// fb = fb + ("Kazz", 7);
 /// fb += ("Vezz", 11);
 ///
@@ -153,6 +154,7 @@ impl AddAssign<(&str, i32)> for FizzBuzz {
     /// ```
     /// # use over_engineered_fizzbuzz::*;
     /// let mut fb = FizzBuzz::default();
+    ///
     /// fb = fb + ("Kazz", 7);
     /// fb += ("Vezz", 11);
     ///
@@ -181,6 +183,7 @@ impl Add<(&str, i32)> for FizzBuzz {
     /// ```
     /// # use over_engineered_fizzbuzz::*;
     /// let mut fb = FizzBuzz::default();
+    ///
     /// fb = fb + ("Kazz", 7);
     /// fb += ("Vezz", 11);
     ///
@@ -276,6 +279,7 @@ pub fn compute_fizzbuzz(fb: &FizzBuzz, var: i32) -> String {
 ///
 /// assert_eq!(left, right);
 /// ```
+#[must_use = "iterators are lazy and do nothing unless consumed"]
 #[derive(Clone, Default, Debug)]
 pub struct FizzBuzzIter<I> {
     fb: FizzBuzz,
